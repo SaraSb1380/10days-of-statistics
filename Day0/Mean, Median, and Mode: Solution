@@ -1,0 +1,8 @@
+import numpy as np
+from scipy import stats
+N=int(input())
+data=sorted(list(map(int,input().split())))
+
+print(round(np.mean(data),1))
+print(round(np.median(data),1))
+print(round(stats.mode(data)[0][0]))
