@@ -1,0 +1,5 @@
+x,y = map(int, input().split())
+trial_n = int(input())
+p_d = x/y
+p_s = 1-p_d
+print(round(p_d*p_s**(trial_n-1),3))
