@@ -1,1 +1,1 @@
-# 10days-of-statistics
+# Hackerrank_ 10 Days of Statistics
