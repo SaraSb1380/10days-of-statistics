@@ -1,0 +1,42 @@
+import math
+N=int(input())
+X=list(map(int,input().split()))
+
+class Quartile:
+    
+
+    def __init__(self,data) :
+        self.sorted_data=sorted(data)
+        self.num=len(sorted(data))
+
+
+    def Q2(self):
+        self.count=len(self.sorted_data)
+        if self.count%2==0:
+            self.median=int((self.sorted_data[int(self.count/2)]+self.sorted_data[int(self.count/2)-1])/2)
+        else:
+            self.median=self.sorted_data[int(self.count/2)]
+        return(int(self.median))
+    
+    def Q1(self):
+        data=self.sorted_data[0:int(self.num/2)]
+        
+        return Quartile(data).Q2()
+
+    def Q3(self):
+        data=self.sorted_data[math.ceil(self.num/2):]
+        
+        return Quartile(data).Q2()
+
+
+
+
+
+Q=Quartile(X)
+
+
+print(Q.Q1())
+
+print(Q.Q2())
+
+print(Q.Q3())
