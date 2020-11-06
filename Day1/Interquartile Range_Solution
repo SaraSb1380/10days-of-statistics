@@ -1,0 +1,43 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+N=int(input())
+X=list(map(int,input().split()))
+F=list(map(int,input().split()))
+X_F=[]
+a=0
+for i in range(N):
+    
+    X_F[a:F[i]]=[X[i]]*F[i]
+    a+=F[i]
+
+
+class Quartile:
+    
+
+    def __init__(self,data) :
+        self.sorted_data=sorted(data)
+        self.num=len(sorted(data))
+
+
+    def Q2(self):
+        self.count=len(self.sorted_data)
+        if self.count%2==0:
+            self.median=round((self.sorted_data[int(self.count/2)]+self.sorted_data[int(self.count/2)-1])/2,1)
+        else:
+            self.median=self.sorted_data[int(self.count/2)]
+        return(round(self.median,1))
+    
+    def Q1(self):
+        data=self.sorted_data[0:int(self.num/2)]
+        
+        return Quartile(data).Q2()
+
+    def Q3(self):
+        data=self.sorted_data[math.ceil(self.num/2):]
+        
+        return Quartile(data).Q2()
+
+
+Q=Quartile(X_F)
+
+print(round(float(Q.Q3()-Q.Q1()),1))
