@@ -1,0 +1,12 @@
+import math
+mean,std = map(float,input().split())
+X1 = float(input())
+X2,X3 = map(float,input().split())
+
+def CDF(X,Mean,STD):
+    z = (X-Mean)/(STD*math.sqrt(2))
+    out = 0.5*(1+math.erf(z))
+    return(out)
+
+print(round(CDF(X1,mean,std),3))
+print(round(CDF(X3,mean,std)-CDF(X2,mean,std),3))
