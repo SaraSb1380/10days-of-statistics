@@ -1,0 +1,7 @@
+landa_A,landa_B = map(float,input().split())
+
+C_A = 160+40*(landa_A+landa_A**2)
+C_B = 128+40*(landa_B+landa_B**2)
+
+print(round(C_A,3))
+print(round(C_B,3))
