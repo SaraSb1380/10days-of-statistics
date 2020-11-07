@@ -1,0 +1,6 @@
+import math
+x,y = map(int, input().split())
+trial_n = int(input())
+pd = x/y
+ps = 1-pd
+print(round((1-(ps**trial_n)),3))
