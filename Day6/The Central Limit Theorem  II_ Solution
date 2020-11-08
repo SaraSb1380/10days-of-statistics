@@ -1,0 +1,18 @@
+import math
+n_ticket = int(input())
+n_student = int(input())
+mean = float(input())
+std = float(input())
+
+mean_sum = n_student*mean
+std_sum = std*math.sqrt(n_student)
+
+
+def CDF(X,Mean,STD):
+    z = (X-Mean)/(STD*math.sqrt(2))
+    out = 0.5*(1+math.erf(z))
+    return(out)
+
+print(round(CDF(n_ticket,mean_sum,std_sum),4))
+
+    
