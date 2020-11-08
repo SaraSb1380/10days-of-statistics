@@ -1,0 +1,15 @@
+import math
+n = int(input())
+mean = float(input())
+std = float(input())
+
+cover = float(input())
+z = float(input())
+
+mean_pop = mean
+std_pop = std/math.sqrt(n)
+
+print(round(-z*std_pop+mean_pop,2))
+print(round(z*std_pop+mean_pop,2))
+
+    
