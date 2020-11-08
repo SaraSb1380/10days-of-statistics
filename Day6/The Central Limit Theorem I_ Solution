@@ -1,0 +1,16 @@
+import math
+capacity = int(input())
+n_box = int(input())
+mean = int(input())
+std = int(input())
+
+mean_sum = n_box * mean
+std_sum = math.sqrt(n_box) * std
+
+def CDF(X,Mean,STD):
+    z = (X-Mean)/(STD*math.sqrt(2))
+    out = 0.5*(1+math.erf(z))
+    return(out)
+
+
+print(round(CDF(capacity, mean_sum, std_sum), 4))
