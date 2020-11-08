@@ -1,0 +1,32 @@
+import math
+
+n = int(input())
+X_input = list(map(float,input().split()))
+Y_input = list(map(float,input().split()))
+def Mean(X):
+    n = len(X)
+    return(sum(X)/n)
+
+def STD(X):
+    N = len(X)
+    mean = sum(X)/N
+    sum_x = 0
+    for i in X:
+        sum_x+=(i-mean)**2
+    std = (sum_x/N)**(1/2)
+    return(std)
+
+def CorrCoef(X,Y):
+    n = len(X)
+    mean_X = Mean(X)
+    mean_Y = Mean(Y)
+    std_X = STD(X)
+    std_Y = STD(Y)
+    sum_xy = 0
+    for i in range(len(X)):
+        sum_xy+=(X[i]-mean_X)*(Y[i]-mean_Y)
+    coef = sum_xy/(n*std_X*std_Y)
+    return(coef)
+
+print(round(CorrCoef(X_input,Y_input),3))
+
