@@ -1,0 +1,24 @@
+import math
+n = int(input())
+X_input = list(map(float,input().split()))
+Y_input = list(map(float,input().split()))
+
+def Rank(X):
+
+    rank_X = [0 for i in range(len(X))]
+    X_sort = sorted(X)
+    for i in range(len(X)):
+        rank_X[X.index(X_sort[i])]=(i+1)
+    return (rank_X)
+
+def spe_rank_corr(X,Y) :      
+    p = Rank(X)
+    q = Rank(Y)
+    n = len(Rank(X))
+
+    d_2 = [(p[i]-q[i])**2 for i in range(len(X))]
+    rxy = 1-(6*(sum(d_2)/(n*(n**2-1))))
+    return((rxy))
+
+print(round(spe_rank_corr(X_input,Y_input),3))
+
