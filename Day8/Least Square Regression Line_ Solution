@@ -1,0 +1,26 @@
+x = [0 for i in range(5)]
+y = [0 for i in range(5)]
+
+
+for i in range(5):
+    x[i],y[i] = map(float, input().split())
+
+def LinearRegression(X,Y):
+    n = len(X)
+    mean_x = sum(X)/n
+    mean_y = sum(Y)/n
+    sum_x2 = sum([(X[i]**2)for i in range(n)])
+    
+    
+    sum_x_y = sum([X[i]*Y[i] for i in range(n)])
+    b = (n*sum_x_y-(sum(X)*sum(Y)))/(n*sum_x2-(sum(X)**2))
+    a = mean_y-(b*mean_x)
+    return a,b
+    
+a,b = LinearRegression(x,y)
+
+print(round(a+b*80,3))
+
+
+
+        
